@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>CSS 연습 5</title>
+
+  <style>
+
+    /*종속 선택자-클래스*/
+    ul.list{
+      color: red;
+    }
+
+    .item1{
+      background: skyblue;
+    }
+
+    .item2{
+      background: yellow;
+    }
+
+    .item3{
+      background: magenta;
+    }
+    /*그룹 선택자*/
+    .item1, .item3{
+      color: white;
+      font-weight: bold;
+     }
+
+  </style>
+
+</head>
+<body>
+
+<ul class="list">
+  <li class="item1" >HTML</li>
+  <li class="item2" >CSS</li>
+  <li class="item3" >Javascript</li>
+</ul>
+
+
+</body>
+</html>
