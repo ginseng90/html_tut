@@ -31,21 +31,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="01_html_ex_07.html" pinned="false" current-in-tab="false">
+      <file leaf-file-name="01_html_ex_07.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/01_html_ex_07.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-8.32">
+            <state vertical-scroll-proportion="0.23690204">
               <caret line="13" column="6" selection-start-line="13" selection-start-column="6" selection-end-line="13" selection-end-column="6" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="test.html" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/test.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -244,7 +234,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="5" y="6" width="1088" height="1040" extended-state="1" />
+    <frame x="5" y="6" width="1088" height="1040" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2369403" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -604,16 +594,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/01_html_ex_07.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-8.32">
+        <state vertical-scroll-proportion="0.23690204">
           <caret line="13" column="6" selection-start-line="13" selection-start-column="6" selection-end-line="13" selection-end-column="6" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
