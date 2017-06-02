@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>css 연습 </title>
+
+  <style>
+    .header{
+      width: 100%;
+      height: 90px;
+      background: #dddddd;
+    }
+
+    .logo{
+      width: 150px;
+      height: 50px;
+      border: 2px #333333;
+    }
+
+    .container{
+      width: 100%;
+      background: #aaaaaa;
+    }
+
+    .container:after{
+      content: "";
+      display: block;
+      clear: both;
+    }
+
+    .box-top{
+      width: 100%;
+      float: left;
+    }
+
+     .box-top:after{
+       content: "";
+       display: block;
+       clear: both;
+     }
+
+    .box-top-left{
+      width: 100%;
+      float: left;
+    }
+
+    .box-top-left-top{
+      width: 70%;
+      float: left;
+    }
+
+
+    .top-left{
+      width: 20%;
+      height: 300px;
+      background: palegreen;
+      float: left;
+    }
+
+    .box-top-left-top-middle{
+      width: 50%;
+      float: left;
+    }
+
+    .top-center-top{
+      width: 50%;
+      height: 150px;
+      background: orange;
+    }
+
+    .top-center-bottom{
+      width: 50%;
+      height: 150px;
+      background: orange;
+    }
+
+    .top-rihgt{
+      width: 30%;
+      height: 800px;
+      background: blue;
+      float: right;
+    }
+
+    .middle-left{
+      width: 70%;
+      height: 500px;
+      background: cornflowerblue;
+      float: left;
+    }
+
+
+    .box-bottom{
+      width: 100%;
+    }
+
+    .bottom-left{
+      width: 20%;
+      height: 300px;
+      background: plum;
+      float: left;
+    }
+
+    .bottom-center{
+      width: 50%;
+      height: 300px;
+      background: purple;
+      float: left;
+    }
+
+    .bottom-rihgt{
+      width: 30%;
+      height: 300px;
+      background: palegoldenrod;
+      float: left;
+    }
+
+    .box-bottom:after{
+      content: "";
+      display: block;
+      clear: both;
+    }
+
+
+  </style>
+</head>
+<body>
+
+<header class="header">
+  <h1 class="logo">Logo</h1>
+</header>
+
+
+
+
+<section class="container">
+
+  <div class="box-top">
+    <div class="box-top-left">
+      <div class="box-top-left-top">
+
+        <div class="top-left">1</div>
+
+        <div class="box-top-left-top-middle">
+
+          <div class="top-center-top">2</div>
+          <div class="top-center-bottom">3</div>
+
+        </div>
+      </div>
+
+      <div class="top-rihgt">4</div>
+
+    </div>
+
+    <div class="middle-left">5</div>
+
+  </div>
+
+  <div class="box-bottom">
+
+    <div class="bottom-left">6</div>
+    <div class="bottom-center">7</div>
+    <div class="bottom-rihgt">8</div>
+
+  </div>
+
+
+</section>
+
+</body>
+</html>
