@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>이벤트 다루기</title>
+
+  <style>
+    .Popup{
+      width: 200px;
+      height: 200px;
+      background: #fff;
+      border:2px solid red;
+      position:fixed;
+      top:50%;
+      left:50%;
+      margin:100px 0 0 -100px;
+    }
+
+    .Popup-header{
+      height:30px;
+      background:red;
+      color:#fff;
+    }
+
+    .Popup-header button{
+      background:none;
+      border:0;
+      color:#fff;
+      position:absolute;
+      top:3px;
+      right:3px;
+    }
+
+    /* 큰 사진의 가로길이 : 215*/
+    .image-top{
+      width: 215px;
+      height: 215px;
+      overflow: hidden;
+    }
+
+    .image-big.full-width{
+      width:100%;
+    }
+
+
+    .image-big.full-height{
+      height:100%;
+    }
+
+    .image-bottom{
+      width:215px;
+      margin-top: 4px;
+    }
+
+    .image-bottom:after{
+      content:"";
+      display: block;
+      clear: both;
+    }
+
+    /* 작은 사진의 가로길이 :  69px, 사이여백-4px */
+    .image-bottom-wrap{
+      width:69px;
+      height: 69px;
+      margin-right:4px;
+      float:left;
+      overflow: hidden;
+    }
+
+    .image-bottom-wrap:last-child{
+      margin-right: 0;
+    }
+
+    .image-thumbnail.full-width{
+      width: 100%;
+    }
+
+    .image-thumbnail.full-height{
+      height:100%;
+    }
+
+  </style>
+  <script src="lib/jquery-3.2.1.min.js"></script>
+  <script>
+    $(function(){
+
+      var layerPop = '';
+
+      $('.anchor').on('click', function(e){
+        // 이벤트를 제어하자 => event 객체를 사용해서 기능
+        // 1. on 함수에 인자로 넣어주는  함수에 매개변수 사용
+        // 2. 매개변수가 event 객체로 만들어짐
+        console.log(e);
+
+        var calculateRatio ={
+          //jQuery DOM 대상을 저장하는 포로퍼티
+          $imageTop : $('.image-top'),
+          $imageBig : $('.image-big'),
+          $imageThumb : $('.image-thumbnail'),
+          // 해당 부분의 값을 저장하는 객체 프로퍼티
+          areaWidth : 0,
+          areaHeight : 0,
+          imageWidth : 0,
+          imageHeight : 0,
+          areaRation : 0,
+          imageRation : 0,
+          // 해당 부분의 값을 계산하는 메소드
+          // 마스크 영역 계산
+
+          areaValue : function(){
+            this.areaWidth = parseInt(this.$imageTop.css('width'));
+            this.areaHeight = parseInt(this.$imageTop.css('height'));
+            this.areaRatio = this.areaWidth / this.areaHeight;
+          },
+
+          // 이미지 계산
+          imageValue : function( $image ){
+            this.imageWidth = parseInt()
+          }
+
+          imageDivide : function(width, height){
+            return width / height;
+          }
+
+        };
+
+        imageRatio.imageRation = imageRatio.imageDivide( imageRatio.imageWidth, imageRatio.imageHeight)
+
+        console.log( imageRatio.areaRation);
+        console.log( imageRatio.imageRation);
+
+        if( imageRatio.areaRation > imageRatio.imageRation){
+          $('.image-big').addClass('full-width');
+        } else {
+          $('.image-big').addClass('full-height');
+        }
+
+        for(var i=0; i<$('.image-bottom-wrap').length; i++){
+
+          var smallWidth = parseInt( $('.image-thumbnail').css('width') );
+          var smallHeight = parseInt( $('.image-thumbnail').css('height') );
+          var smallRatio = smallWidth / smallHeight;
+
+          if( imageRatio.areaRation > smallRatio){
+            $('.image-thumbnail').eq(i).addClass('full-width');
+          } else {
+            $('.image-thumbnail').eq(i).addClass('full-height');
+          }
+
+        }
+
+          // 이벤트를 제아하자 => event 객체를 사용해서 기능
+        // 1. on 함수에 인자로 넣어주는 함수에 매개변수 사용
+        // 2. 매개변수가 event 객체로 만들어짐
+        console.log(e);
+
+        // 태그의 기본동작을 막는 기능
+        e.preventDefault();
+
+        // a = a + 1  => a += 1
+        layerPop = '<div class="Popup">';
+        layerPop += '<div class="Popup-header">';
+        layerPop += '<div>메세지</div>';
+        layerPop += '<button type="button">닫기</button>';
+        layerPop += '</div>';
+        layerPop += '<div class="Popup-content">';
+        layerPop += '<p>안녕하세요</p>';
+        layerPop += '</div>';
+        layerPop += '</div>';
+
+
+        $('body').append(layerPop);
+      });
+
+    });
+  </script>
+</head>
+<body>
+
+<pre>
+
+  이벤트
+
+  1. 이벤트의 종류
+
+    - 마우스 이벤트 / 키보드 이벤트 / Element 이벤트 / 사용자 이벤트
+
+  2. 이벤트 단계
+
+    2-1. Capturing
+
+    2-2. Targeting
+
+    2-3. Bubbling
+
+  3. 이벤트 제어 함수
+
+    - on() 함수
+
+    - $(대상).on('이벤트 종류', '함수');
+
+  4. 이벤트 이름
+
+    - blur : 포커스가 잃었을 때
+
+    - click : 마우스를 클릭했을 때
+
+    - focusin / focusout : 포커스를 얻었을 때 / 잃었을 때
+
+    - keydown / keyup : 키보드 눌렀을 때 / 떼었을 때
+
+    - mousedown / mouseup : 마우스 버튼 눌렀을 때 / 떼었을 때
+
+    - mouseenter / mouseleave : 마우스 커서가 닿았을 때 / 떨어졌을 때 ( bubbling 발생하지 않음 )
+
+    - mouseover / mouseout : 마우스 커서가 닿았을 때 / 떨어졌을 때 ( bubbling 발생함 ) -bubbling 발생하는게 안좋음. 안쓰는게 좋다.
+
+    - resize : 브라우저 크기가 변경될 때
+
+    - scroll : 스크롤 될 때 ( 웹 페이지 전체 스크롤 - window 객체 )
+
+    - load / unload : 대상이 로딩되었을 때 / 제거되었을 때 ( 이미지가 모두 로딩된 이후에 코드가 실행되게 할 때 주로 사용 )
+
+    -select : 텍스트를 마우스로 드래그해서 선택했을 때
+
+
+</pre>
+
+<div>
+  <a href="http://wwww.naver.com" class="anchor">네이버 링크</a>
+</div>
+
+<div class="image-wrap">
+  <div class="image-top">
+    <img src="images/팀%20버너스리.jpg" class="image-big"/>
+  </div>
+  <div class="image-bottom">
+    <div class="image-bottom-wrap"><img src="images/img_contant_01.jpg" class="image-thumbnail" /></div>
+  </div>
+</div>
+
+<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+
+<div>
+  <a href="#" class="anchor">메세지 출력</a>
+  <!--# : 맨위로 올라가게 해줌-->
+</div>
+
+
+
+
+</body>
+</html>

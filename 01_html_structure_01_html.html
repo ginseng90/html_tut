@@ -7,27 +7,28 @@
   <!--UTF-8방식으로 한글 인코딩을 해라-->
   <meta charset="UTF-8">
 
-
   <title>Artica - One page Template</title>
+  <link rel="stylesheet" href="../css/reset.css" />
+  <link rel="stylesheet" href="../css/style.css"/>
 </head>
 <body>
 
-<header>
-  <div>
-    <h1>Artica</h1>
-    <input type="button" value="메뉴토글" />
-    <nav>
-      <div>Artica</div>
-      <ul>
-        <li>Home</li>
-        <li>Services</li>
-        <li>Portfolio</li>
-        <li>About</li>
-        <li>Blog</li>
-        <li>Clients</li>
-        <li>Contact</li>
+<header class="header">
+  <div class="inner box table-cell">
+    <h1 class="logo"><a href="#" class="logo-link">Artica</a></h1>
+    <input type="button" value="메뉴토글 " class="btn_menu-toggle" />
+    <nav class="gnb">
+      <div class="gnb-heading">Artica</div>
+      <ul class="gnb-list">
+        <li class="gnb-item"><a href="#" class="gnb-link">Home</a></li>
+        <li class="gnb-item"><a href="#" class="gnb-link">Services</a></li>
+        <li class="gnb-item"><a href="#" class="gnb-link">Portfolio</a></li>
+        <li class="gnb-item"><a href="#" class="gnb-link">About</a></li>
+        <li class="gnb-item"><a href="#" class="gnb-link">Blog</a></li>
+        <li class="gnb-item"><a href="#" class="gnb-link">Clients</a></li>
+        <li class="gnb-item"><a href="#" class="gnb-link">Contact</a></li>
       </ul>
-      <input type="button" value="메뉴닫기" />
+      <input type="button" value="메뉴닫기" class="btn_menu-close"/>
     </nav>
   </div>
 </header>
